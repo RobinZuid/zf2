@@ -85,7 +85,7 @@ class PredicateSet implements PredicateInterface, Countable
             foreach ($predicates as $pkey => $pvalue) {
                 // loop through predicates
                 if (is_string($pkey)) {
-                    if (strpos($pkey, '?') !== false) {
+                    if (strpos($pkey, Expression::PLACEHOLDER) !== false) {
                         // First, process strings that the abstraction replacement character ?
                         // as an Expression predicate
                         $predicates = new Expression($pkey, $pvalue);
